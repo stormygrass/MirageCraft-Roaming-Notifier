@@ -16,8 +16,9 @@ public class MirageCraftNotifierClient implements ClientModInitializer {
 		LOGGER.debug("client loaded");
 		CustomSounds.initialize();
 
+		// checks if a message is from the SERVER, that it isn't from a discord webhook, and that the message contains "amy" and "roaming".
 		ClientReceiveMessageEvents.GAME.register((message, overlay) -> {
-			if (message.getString().contains("Amy") && message.getString().toLowerCase().contains("roaming")) {
+			if (!message.getString().toLowerCase().contains("discord") && message.getString().contains("Amy") && message.getString().toLowerCase().contains("roaming")) {
 				Minecraft client = Minecraft.getInstance();
 				CustomSoundInstance instance = new CustomSoundInstance(client.player, CustomSounds.ROAMINGPOKE_ALERT, SoundSource.VOICE);
 
