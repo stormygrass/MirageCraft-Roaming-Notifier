@@ -1,9 +1,11 @@
 # MirageCraft Notifier
+A simple client-side mod that listens for roaming events and alerts the user. If you wish to change the volume of the alert use the "voices/speech" slider in minecraft's music settings. 
 
-## Setup
+A config menu will be added in the future and you will be able to customise alerts for certain legendary pokemon etc.
 
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
 
-## License
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+
+
+## Building
+use ``.\gradlew build`` if you wish to build it yourself.
