@@ -1,0 +1,29 @@
+package net.stormygrass.miragenotifier.client;
+
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.message.v1.ClientReceiveMessageEvents;
+import net.minecraft.client.Minecraft;
+import net.minecraft.sounds.SoundSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class MirageCraftNotifierClient implements ClientModInitializer {
+	public static final String MOD_ID = "miragecraft-notifier";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+	@Override
+	public void onInitializeClient() {
+		LOGGER.debug("client loaded");
+		CustomSounds.initialize();
+
+		ClientReceiveMessageEvents.GAME.register((message, overlay) -> {
+			if (message.getString().contains("Amy") && message.getString().toLowerCase().contains("roaming")) {
+				Minecraft client = Minecraft.getInstance();
+				CustomSoundInstance instance = new CustomSoundInstance(client.player, CustomSounds.ROAMINGPOKE_ALERT, SoundSource.VOICE);
+
+				// play the alert
+				client.getSoundManager().play(instance);
+			}
+		});
+	}
+}

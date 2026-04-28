@@ -1,0 +1,6 @@
+{
+  "roamingpoke_alert": {
+    "subtitle": "sound.miragecraft-notifier.roamingpoke_alert",
+    "sounds": ["miragecraft-notifier:roamingpoke_alert"]
+  }
+}

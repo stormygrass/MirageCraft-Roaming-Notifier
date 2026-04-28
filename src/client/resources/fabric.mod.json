@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "miragecraft-notifier",
+	"version": "${version}",
+	"name": "MirageCraft Notifier",
+	"description": "This mod provides an alert for when roaming events begin on the MirageCraft Cobblemon server. To change volume use the 'Voice/Speech' slider in music settings.",
+
+
+	"authors": [
+		"stormygrass"
+	],
+	"contact": {
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/miragecraft-notifier/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"net.stormygrass.miragenotifier.client.MirageCraftNotifierClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
